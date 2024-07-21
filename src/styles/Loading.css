@@ -1,0 +1,23 @@
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  color: #f7f6f4;
+  letter-spacing: 0.4rem;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 97vh;
+  width: 100%;
+}
+.line {
+  width: 121px;
+  height: 50px;
+  border-bottom: 1px solid #f7f6f4;
+  position: absolute;
+  filter: blur(2px);
+  margin-right: 5px;
+}
+/*TODO add animation on line*/
