@@ -3,9 +3,9 @@ import "../styles/Loading.css";
 
 function Loading() {
   return (
-    <div>
+    <div className="loading-container">
       <h1>AURA</h1>
-      <div class="line"></div>
+      <div className="line"></div>
     </div>
   );
 }

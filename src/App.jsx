@@ -5,7 +5,7 @@ import GamePage from "./components/GamePage.jsx";
 import "./App.css";
 
 function App() {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
 
   return (
     <>

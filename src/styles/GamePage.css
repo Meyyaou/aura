@@ -1,0 +1,69 @@
+.score p {
+  font-size: 17px;
+}
+
+.score {
+  width: 100px;
+  height: 25px;
+  background-color: rgba(0, 119, 254, 0);
+  margin: auto;
+  margin-bottom: 20px;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+}
+.card {
+  height: 300px;
+  width: 250px;
+  background-color: #649ea9;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.card p {
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.left-arrow {
+  margin-right: 20px;
+  height: 300px;
+  width: 60px;
+  background-color: rgba(0, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-arrow {
+  margin-left: 20px;
+  height: 300px;
+  width: 60px;
+  background-color: rgba(166, 13, 221, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-phrase {
+  height: 80px;
+  width: 100%;
+  background-color: rgba(245, 245, 220, 0);
+  position: absolute;
+  bottom: 0;
+}
+.game-phrase p {
+  text-align: center;
+}
+.line-game {
+  width: 100px;
+  height: 50px;
+  border-bottom: 1px solid #f7f6f4;
+  position: absolute;
+  bottom: 4%;
+  left: 45%;
+  filter: blur(2px);
+  margin-right: 0px;
+}

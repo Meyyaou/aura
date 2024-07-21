@@ -5,7 +5,7 @@ h1 {
   letter-spacing: 0.4rem;
 }
 
-div {
+.loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
