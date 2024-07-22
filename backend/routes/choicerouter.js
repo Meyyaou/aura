@@ -1,8 +1,8 @@
-//
-const {Router}= require("express"); //or const express = require("express")
-const app = Router(); // or const router= express.Router();
+const { Router } = require("express");
+const router = Router();
+const choicectrl = require('../controllers/choicecontroller');
 
-const choicectrl= 
-app.get('/', (req, res)=>{
-    res.send()
-})
+router.get('/random', choicectrl.getRandomCard);
+router.post('/submit', choicectrl.submitChoice);
+
+module.exports = router;

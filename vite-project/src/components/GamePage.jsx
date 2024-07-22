@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getRandomCard, submitChoice } from "../services/api";
 import "../styles/GamePage.css";
 
 const Popup = ({ content, position }) => (
@@ -6,9 +7,24 @@ const Popup = ({ content, position }) => (
 );
 
 function GamePage() {
+  const [card, setCard] = useState(null);
   const [isPopped, setPopped] = useState(false);
   const [popupContent, setPopupContent] = useState("");
   const [popupPosition, setPopupPosition] = useState("");
+  const [score, setScore] = useState(0);
+
+  useEffect(() => {
+    fetchRandomCard();
+  }, []);
+
+  const fetchRandomCard = async () => {
+    try {
+      const response = await getRandomCard();
+      setCard(response.data);
+    } catch (error) {
+      console.error('Error fetching card:', error);
+    }
+  };
 
   const handleHover = (content, position) => {
     setPopupContent(content);
@@ -19,29 +35,45 @@ function GamePage() {
   const handleLeave = () => {
     setPopped(false);
   };
+  const handleChoice = async (choice, points) => {
+    try {
+      await submitChoice(choice);
+      setScore(score + points);
+      fetchRandomCard();
+    } catch (error) {
+      console.error('Error submitting choice:', error);
+    }
+  };
+
+  if (!card) return <div>Loading...</div>;
 
   return (
     <>
       <div className="score">
-        <p>SCORE: <b>22</b></p>
+        <p>SCORE: <b>{score}</b></p>
       </div>
       <div className="card-container">
         <div 
           className="left-arrow" 
           
         >
-          <p onMouseOver={() => handleHover("Left Arrow Popup", "left")} 
-          onMouseLeave={handleLeave}>&lt;</p>
+          <p onMouseOver={() => handleHover(card.choice1, "left")} 
+          onMouseLeave={handleLeave}
+          onClick={()=> handleChoice(card.choice1, card.point1)}
+          >&lt;</p>
         </div>
         <div className="card">
-          <p>ALLER AU STADE ET CHANTER AVEC LES SUPPORTERS</p>
+          <p>{card.content}</p>
         </div>
         <div 
           className="right-arrow" 
          
         >
-          <p  onMouseOver={() => handleHover("Right Arrow Popup", "right")} 
-          onMouseLeave={handleLeave}>&gt;</p>
+          <p  onMouseOver={() => handleHover(card.choice2, "right")} 
+          onMouseLeave={handleLeave}
+          onClick={() => handleChoice(card.choice2, card.point2)}
+
+          >&gt;</p>
         </div>
       </div>
       <div className="game-phrase">
