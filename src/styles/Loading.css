@@ -3,6 +3,8 @@ h1 {
   text-align: center;
   color: #f7f6f4;
   letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  animation: shine 1.5s ease-in-out infinite alternate;
 }
 
 .loading-container {
@@ -20,4 +22,12 @@ h1 {
   filter: blur(2px);
   margin-right: 5px;
 }
-/*TODO add animation on line*/
+@keyframes shine {
+  from {
+    text-shadow: 0 0 20px #649ea9;
+  }
+  to {
+    text-shadow: 0 0 30px rgb(80, 207, 222);
+  }
+}
+/*TODO verify the centered divs*/

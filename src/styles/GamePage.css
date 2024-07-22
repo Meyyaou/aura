@@ -3,10 +3,12 @@
 }
 
 .score {
+  margin-top: 30px;
   width: 100px;
   height: 25px;
   background-color: rgba(0, 119, 254, 0);
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
 }
 .card-container {
@@ -17,8 +19,8 @@
   width: 100%;
 }
 .card {
-  height: 300px;
-  width: 250px;
+  height: 350px;
+  width: 300px;
   background-color: #649ea9;
   border-radius: 15px;
   display: flex;
@@ -28,8 +30,10 @@
   padding: 10px;
   text-align: center;
   font-weight: 600;
+  font-size: 20px;
 }
 .left-arrow {
+  font-size: 30px;
   margin-right: 20px;
   height: 300px;
   width: 60px;
@@ -38,7 +42,11 @@
   justify-content: center;
   align-items: center;
 }
+.left-arrow p, .right-arrow p{
+  cursor: pointer;
+}
 .right-arrow {
+  font-size: 30px;
   margin-left: 20px;
   height: 300px;
   width: 60px;
@@ -47,6 +55,27 @@
   justify-content: center;
   align-items: center;
 }
+.popup {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 100;
+  color: black;
+}
+
+.popup.left {
+  top: 44%;
+  left: 23%;
+  transform: translateY(-50%);
+}
+
+.popup.right {
+  top: 44%;
+  right: 23%;
+  transform: translateY(-50%);
+}
+
 .game-phrase {
   height: 80px;
   width: 100%;
@@ -59,11 +88,63 @@
 }
 .line-game {
   width: 100px;
-  height: 50px;
+  height: 1px;
   border-bottom: 1px solid #f7f6f4;
   position: absolute;
   bottom: 4%;
   left: 45%;
   filter: blur(2px);
   margin-right: 0px;
+  animation: glow 8s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #f7f6f48e, 0 0 15px #eceae88d, 0 0 20px #c5c2bb82,
+      0 0 25px #c4c1ba9a;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .popup.left {
+    top: 28%;
+    left: 30%;
+    transform: translateY(-50%);
+  }
+
+  .popup.right {
+    top: 28%;
+    right: 30%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .popup.left {
+    top: 25%;
+    left: 15%;
+    transform: translateY(-50%);
+  }
+
+  .popup.right {
+    top: 25%;
+    right: 15%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popup{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popup{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup{
+    display: none;
+  }
 }
