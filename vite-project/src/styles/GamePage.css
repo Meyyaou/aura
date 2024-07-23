@@ -98,9 +98,8 @@
   border-bottom: 1px solid #f7f6f4;
   position: absolute;
   bottom: 4%;
-  left: 45%;
+  left: 43%;
   filter: blur(2px);
-  margin-right: 0px;
   animation: glow 8s ease-in-out infinite alternate;
 }
 @keyframes glow {
