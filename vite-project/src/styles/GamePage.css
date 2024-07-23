@@ -1,3 +1,4 @@
+/*TODO add more animation and fluidity to the stuff*/
 .score p {
   font-size: 17px;
 }
@@ -12,6 +13,7 @@
   margin-bottom: 20px;
 }
 .card-container {
+  margin-top: 70px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -25,12 +27,14 @@
   border-radius: 15px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .card p {
   padding: 10px;
   text-align: center;
   font-weight: 600;
   font-size: 20px;
+  text-transform: uppercase;
 }
 .left-arrow {
   font-size: 30px;
@@ -42,7 +46,8 @@
   justify-content: center;
   align-items: center;
 }
-.left-arrow p, .right-arrow p{
+.left-arrow p,
+.right-arrow p {
   cursor: pointer;
 }
 .right-arrow {
@@ -64,6 +69,7 @@
   color: black;
 }
 
+/*TODO find a way to make them adjustable based on text length*/
 .popup.left {
   top: 44%;
   left: 23%;
@@ -132,19 +138,19 @@
 }
 
 @media screen and (max-width: 768px) {
-  .popup{
+  .popup {
     display: none;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .popup{
+  .popup {
     display: none;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .popup{
+  .popup {
     display: none;
   }
 }
