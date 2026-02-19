@@ -1,4 +1,5 @@
 const express = require("express");
+
 const mongoose = require("mongoose");
 const choiceRouter = require('./routes/choicerouter');
 
@@ -9,7 +10,7 @@ mongoose.connect(mongoURI)
 
 const app = express();
 
-app.use(express.json()); // Middleware to parse JSON
+app.use(express.json()); // middleware to parse JSON
 
 // CORS setup
 app.use((req, res, next) => {
@@ -19,12 +20,8 @@ app.use((req, res, next) => {
     next();
 });
 
-// Use routes
+// use routes
 app.use('/api/choice', choiceRouter);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 
 module.exports = app;

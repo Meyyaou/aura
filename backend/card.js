@@ -7,6 +7,7 @@ const cardSchema= mongoose.Schema({
     point1: {type: Number, required: true},
     choice2: {type: String, required: true},
     point2: {type: Number, required: true},
+    used: { type: Boolean, default: false } 
 });
 
 module.exports = mongoose.model("Card", cardSchema);
