@@ -6,5 +6,9 @@ A fun card game where you decide what to do in multiple situations and get the v
 by playing the card game now !
 
 _only french version_
+![description](https://github.com/MeyWhy/aura/img1.png)
+
+
+![description](https://github.com/MeyWhy/aura/img2.png)
 
 ... discontinued (no more db)
